@@ -1,0 +1,15 @@
+.day-nav {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.day-nav-item {
+  color: #808080;
+  display: inline-block;
+  padding: 3px;
+}
+
+.day-nav-item.active {
+  color: #734c26;
+}

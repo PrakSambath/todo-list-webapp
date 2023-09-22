@@ -1,0 +1,16 @@
+.date {
+  display: flex;
+  flex-direction: column;
+}
+
+.date > div {
+  display: flex;
+  justify-content: space-between;
+}
+.current-date {
+  color: #734c26;
+}
+
+.pick-date {
+  /* margin-left: auto; */
+}

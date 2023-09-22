@@ -1,0 +1,8 @@
+.category {
+  display: flex;
+  justify-content: center;
+}
+
+.category * {
+  margin: 0 10px;
+}

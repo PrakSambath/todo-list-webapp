@@ -1,0 +1,15 @@
+.btn-new {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #734c26;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: #734c26;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 40px;
+}
