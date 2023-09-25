@@ -5,8 +5,8 @@ import DateComponent from "./components/DateNav";
 import DateNav from "./components/DateNav";
 import Category from "./components/Category";
 import Label from "./components/Label";
-import List from "./List";
-import BtnNew from "./BtnNew";
+import List from "./components/List";
+import BtnNew from "./components/BtnNew";
 
 function App() {
   return (

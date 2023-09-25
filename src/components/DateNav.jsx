@@ -1,6 +1,7 @@
 import React from "react";
 import "./DateNav.css";
 import DayNav from "./DayNav";
+import DatePicker from "./DatePicker";
 
 export default function () {
   const date = new Date();
@@ -8,11 +9,8 @@ export default function () {
   const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
     <div className="date">
-      <div>
-        <div className="current-date">{currentDate}</div>
-        <button className="date-picker">#</button>
-      </div>
-      <DayNav></DayNav>
+      <DatePicker></DatePicker>
+      {/* <DayNav></DayNav> */}
     </div>
   );
 }

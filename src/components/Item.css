@@ -8,22 +8,31 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+  color: #734c26;
+}
+
+.item.done {
+  background-color: #ebe6e0;
+  color: #808080;
 }
 
 .title {
   font-size: 12px;
   font-weight: bold;
   margin: 0;
+  color: inherit;
 }
 
 .description {
   font-size: 10px;
   margin: 0;
+  color: inherit;
 }
 
 .time {
   font-size: 10px;
   margin: 0;
+  color: inherit;
 }
 
 .tag {
@@ -53,4 +62,30 @@
   height: 20px;
   border-radius: 5px;
   margin: 0;
+}
+
+.undeleteable {
+  display: none;
+  transition: all 1s ease-out;
+}
+
+.deleteable {
+  background-color: #ff6666;
+  height: 60px;
+  width: 20%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-out;
+}
+
+.deleteable * {
+  /* width: 40px; */
+  height: 30px;
+  color: #fff;
 }

@@ -3,9 +3,16 @@
   height: 60px;
   background-color: #ebe6e0;
   color: #734c26;
-  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.h1 {
+.app-name {
   color: #734c26;
+  font-size: 20px;
+}
+
+.header svg {
+  height: 40px;
 }
