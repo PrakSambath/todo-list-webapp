@@ -2,14 +2,14 @@ import React from "react";
 import "./List.css";
 import Item from "./Item";
 
-export default function () {
+export default function ({ data, onEdit, onDelete, onCheck }) {
   const datas = [
     {
       id: 100,
       title: "Title",
       description: "Description",
       time: "8:00 AM",
-      tag: "work",
+      category: "work",
       status: "todo",
     },
     {
@@ -17,7 +17,7 @@ export default function () {
       title: "Title",
       description: "Description",
       time: "8:00 AM",
-      tag: "finance",
+      category: "finance",
       status: "todo",
     },
     {
@@ -25,7 +25,7 @@ export default function () {
       title: "Title",
       description: "Description",
       time: "8:00 AM",
-      tag: "buy",
+      category: "buy",
       status: "todo",
     },
     {
@@ -33,7 +33,7 @@ export default function () {
       title: "Title",
       description: "Description",
       time: "8:00 AM",
-      tag: "person",
+      category: "person",
       status: "todo",
     },
   ];
@@ -41,7 +41,14 @@ export default function () {
   const lists = [];
 
   datas.forEach((i) => {
-    lists.push(<Item data={i}></Item>);
+    lists.push(
+      <Item
+        data={i}
+        onEdit={onEdit}
+        onDelete={onDelete}
+        onCheck={onCheck}
+      ></Item>
+    );
   });
 
   return <div className="list">{lists}</div>;

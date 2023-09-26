@@ -1,9 +1,9 @@
 import React from "react";
 import "./BtnNew.css";
 
-export default function () {
+export default function ({ open }) {
   return (
-    <div className="btn-new" onClick={(event) => alert("Add new todo")}>
+    <div className="btn-new" onClick={open}>
       +
     </div>
   );
