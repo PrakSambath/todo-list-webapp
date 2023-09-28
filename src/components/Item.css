@@ -1,6 +1,5 @@
 .item {
   width: 100%;
-  height: 60px;
   background-color: #fae9d1;
   border-radius: 5px;
   padding: 7px 10px;
@@ -11,35 +10,40 @@
   color: #734c26;
 }
 
+.item .content {
+  width: 200px;
+}
+
 .item.done {
   background-color: #ebe6e0;
   color: #808080;
 }
 
 .item .title {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
   margin: 0;
   color: inherit;
+  word-wrap: break-word;
 }
 
 .item .description {
-  font-size: 10px;
+  font-size: 16px;
   margin: 0;
   color: inherit;
+  word-wrap: break-word;
 }
 
 .item .time {
-  font-size: 10px;
+  font-size: 14px;
   margin: 0;
   color: inherit;
 }
 
-.item .category {
+.item .tag {
   width: 20px;
-  height: 10px;
+  height: 5px;
   border-radius: 5px;
-  /* background-color: green; */
   position: absolute;
   left: 10px;
   top: 0;
@@ -64,14 +68,14 @@
   margin: 0;
 }
 
-.undeleteable {
+.item .undeleteable {
   display: none;
   transition: all 1s ease-out;
 }
 
-.deleteable {
+.item .deleteable {
   background-color: #ff6666;
-  height: 60px;
+  height: 100%;
   width: 20%;
   position: absolute;
   right: 0;
@@ -84,8 +88,7 @@
   transition: all 1s ease-out;
 }
 
-.deleteable * {
-  /* width: 40px; */
+.item .deleteable * {
   height: 30px;
   color: #fff;
 }

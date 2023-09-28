@@ -8,10 +8,18 @@ body {
 #main {
   width: 320px;
   height: 568px;
-  padding: 0 20px;
   box-sizing: border-box;
   /* background-color: red; */
   border: 1px solid #000;
   /* border-radius: 5px; */
   position: relative;
+  overflow: hidden;
+}
+
+#category {
+  margin: 20px 0;
+}
+
+.container {
+  padding: 0 20px;
 }

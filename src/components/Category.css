@@ -1,7 +1,8 @@
 .category {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .category .color {
@@ -9,15 +10,23 @@
   width: 20px;
   height: 10px;
   border-radius: 5px;
-  margin-right: 1px;
 }
 
 .category .name {
   color: #734c26;
-  margin-right: 5px;
+  font-size: 12px;
+  margin-left: 2px;
 }
 
 .category .selected {
   border: 1px solid #734c26;
+  box-sizing: border-box;
+}
+
+.category .wrapper {
+  margin: 0 2px;
   border-radius: 5px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
 }

@@ -3,47 +3,52 @@ import "./Item.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPencil } from "@fortawesome/free-solid-svg-icons";
 
-export default function ({ data, onEdit, onDelete, onCheck }) {
+export default function ({ item, onEdit, onDelete, onCheck }) {
   const tagColors = {
-    work: "#53FF83",
-    finance: "#005CE5",
-    buy: "#BE53FF",
-    person: "#FFBA53",
+    Work: "#53FF83",
+    Finance: "#005CE5",
+    Buy: "#BE53FF",
+    Person: "#FFBA53",
   };
 
-  const [title, setTitle] = useState(data.title);
-  const [description, setDescription] = useState(data.description);
-  const [time, setTime] = useState(data.time);
-  const [category, setCategory] = useState(data.category);
-  const [isChecked, setChecked] = useState(true);
+  const [isChecked, setChecked] = useState(item.status);
   const [isDeleteable, setDeleteable] = useState(false);
 
   return (
     <div
       draggable={true}
-      className={isChecked ? "item" : "item done"}
+      className={isChecked ? "item done" : "item"}
       onDragStart={(event) => {
         setDeleteable((current) => !current);
       }}
     >
       <div
-        className="category"
-        style={{ backgroundColor: tagColors[category] }}
+        className="tag"
+        style={{ backgroundColor: tagColors[item.category] }}
       ></div>
       <div className="content">
-        <p className="title">{title}</p>
-        <p className="description">{description}</p>
-        <p className="time">{time}</p>
+        <p className="title">{item.title}</p>
+        <p className="description">{item.description}</p>
+        <p className="time">
+          {item.time.getHours() + ":" + item.time.getMinutes()}
+        </p>
       </div>
       <div className="action">
-        <span onClick={onEdit}>
+        <span
+          onClick={() => {
+            onEdit(item);
+          }}
+        >
           <FontAwesomeIcon icon={faPencil} />
         </span>
         <input
+          checked={isChecked}
           type="checkbox"
           className="checkbox"
           onChange={(event) => {
-            setChecked(!event.target.checked);
+            setChecked(event.target.checked);
+            item.status = event.target.checked ? 1 : 0;
+            onCheck(item);
           }}
         ></input>
       </div>
@@ -51,7 +56,7 @@ export default function ({ data, onEdit, onDelete, onCheck }) {
         <FontAwesomeIcon
           icon={faTrash}
           onClick={(event) => {
-            alert("Don't delete me");
+            onDelete(item.id);
           }}
         />
       </div>

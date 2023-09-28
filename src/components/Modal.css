@@ -1,6 +1,6 @@
 .modal {
   position: fixed;
-  top: 100px;
+  top: 180px;
 }
 
 .modal-container {
@@ -22,6 +22,7 @@
 
 .modal-tag {
   height: 30px;
+  margin: 10px 0;
 }
 
 .modal-title {
@@ -36,7 +37,7 @@
 }
 
 .modal-description {
-  min-height: 60px;
+  min-height: 100px;
   height: max-content;
   border: 1px solid #734c26;
   border-radius: 5px;
@@ -44,7 +45,7 @@
   background-color: #fff;
   padding: 2px;
   box-sizing: border-box;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .modal-time {
@@ -59,4 +60,12 @@
 
 .modal.hide {
   display: none;
+}
+
+.modal-button {
+  display: flex;
+}
+
+.modal-button .ok {
+  margin-right: 5px;
 }

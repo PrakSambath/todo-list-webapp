@@ -1,19 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Modal.css";
 import Category from "./Category";
 import Button from "./Button";
 import TimePicker from "./TimePicker";
 
-export default ({ data, open, onClose }) => {
-  const date = new Date();
+export default ({ todoContent, open, onClose, onSave }) => {
+  // const date = new Date();
 
   const categories = [
-    { color: "#53FF83", name: "Work", selected: true },
-    { color: "#005CE5", name: "Finance", selected: false },
-    { color: "#BE53FF", name: "Buy", selected: false },
-    { color: "#FFBA53", name: "Person", selected: false },
+    { color: "#53FF83", name: "Work" },
+    { color: "#005CE5", name: "Finance" },
+    { color: "#BE53FF", name: "Buy" },
+    { color: "#FFBA53", name: "Person" },
   ];
 
+  let title = todoContent.title;
+  let description = todoContent.description;
+  let time = todoContent.time;
+  let category = todoContent.category;
+
+  const onSaveHandler = () => {
+    if (title != "") {
+      onSave({
+        id: todoContent.id,
+        title: title,
+        description: description,
+        time: time,
+        category: category,
+        status: todoContent.status,
+      });
+    }
+  };
+
+  const onSelectedTime = (selectedTime) => {
+    time = selectedTime;
+    console.log(selectedTime);
+  };
+
+  const onSelectedCategory = (selectedCategory) => {
+    category = selectedCategory;
+  };
   if (!open) {
     return null;
   }
@@ -21,24 +47,38 @@ export default ({ data, open, onClose }) => {
     <div className="modal">
       <div className="modal-container">
         <div className="modal-tag">
-          <Category data={categories}></Category>
+          <Category
+            items={categories}
+            onSelected={onSelectedCategory}
+            setSelection={todoContent.category}
+            selectable={true}
+          ></Category>
         </div>
         <input
           type="text"
           placeholder="Title"
           className="modal-title"
-          defaultValue={data.title}
+          defaultValue={title}
+          onChange={(event) => (title = event.target.value)}
         />
         <textarea
           placeholder="Description"
           className="modal-description"
-          value={data.description}
+          defaultValue={description}
+          onChange={(event) => (description = event.target.value)}
         />
         <div className="modal-footer">
-          <TimePicker className="modal-time"></TimePicker>
-          <div>
-            <Button>Ok</Button>
-            <Button onClick={onClose}>Cancel</Button>
+          <TimePicker
+            className="modal-time"
+            onSelected={onSelectedTime}
+          ></TimePicker>
+          <div className="modal-button">
+            <button className="btn ok" onClick={() => onSaveHandler()}>
+              Ok
+            </button>
+            <button className="btn cancel" onClick={onClose}>
+              Cancel
+            </button>
           </div>
         </div>
       </div>

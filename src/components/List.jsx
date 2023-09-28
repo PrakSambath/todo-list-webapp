@@ -2,54 +2,32 @@ import React from "react";
 import "./List.css";
 import Item from "./Item";
 
-export default function ({ data, onEdit, onDelete, onCheck }) {
-  const datas = [
-    {
-      id: 100,
-      title: "Title",
-      description: "Description",
-      time: "8:00 AM",
-      category: "work",
-      status: "todo",
-    },
-    {
-      id: 101,
-      title: "Title",
-      description: "Description",
-      time: "8:00 AM",
-      category: "finance",
-      status: "todo",
-    },
-    {
-      id: 102,
-      title: "Title",
-      description: "Description",
-      time: "8:00 AM",
-      category: "buy",
-      status: "todo",
-    },
-    {
-      id: 103,
-      title: "Title",
-      description: "Description",
-      time: "8:00 AM",
-      category: "person",
-      status: "todo",
-    },
-  ];
-
-  const lists = [];
-
-  datas.forEach((i) => {
-    lists.push(
-      <Item
-        data={i}
-        onEdit={onEdit}
-        onDelete={onDelete}
-        onCheck={onCheck}
-      ></Item>
-    );
+export default function ({ items, onEdit, onDelete, onCheck, filter }) {
+  const filteredItems = items.filter((e) => {
+    if (filter == 0) {
+      return e.status == 0;
+    } else if (filter == 1) {
+      return e.status == 1;
+    } else {
+      return true;
+    }
   });
 
-  return <div className="list">{lists}</div>;
+  return (
+    <div className="list">
+      {filteredItems.length == 0 ? (
+        <div className="notodo">No Todo</div>
+      ) : (
+        filteredItems.map((item) => (
+          <Item
+            key={item.id}
+            item={item}
+            onEdit={onEdit}
+            onDelete={onDelete}
+            onCheck={onCheck}
+          ></Item>
+        ))
+      )}
+    </div>
+  );
 }

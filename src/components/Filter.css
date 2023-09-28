@@ -1,8 +1,17 @@
 .filter {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
-.filter * {
+.filter .btn {
   margin: 0 10px;
+  border: none;
+  height: 40px;
+}
+
+.filter .active {
+  border: 1px solid #734c26;
+  background-color: #734c26;
+  color: #fff;
 }
