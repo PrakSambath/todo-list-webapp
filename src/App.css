@@ -1,17 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Siemreap&display=swap");
+
 body {
-  /* background-color: #EBE6E0; */
+  height: 100vh;
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-family: "Siemreap", sans-serif;
 }
 
 #main {
   width: 320px;
   height: 568px;
   box-sizing: border-box;
-  /* background-color: red; */
-  border: 1px solid #000;
-  /* border-radius: 5px; */
+  background-color: #fff;
+  border: 5px solid #ebe6e0;
+  border-radius: 10px;
   position: relative;
   overflow: hidden;
 }
