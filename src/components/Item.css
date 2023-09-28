@@ -1,0 +1,94 @@
+.item {
+  width: 100%;
+  background-color: #fae9d1;
+  border-radius: 5px;
+  padding: 7px 10px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  color: #734c26;
+}
+
+.item .content {
+  width: 200px;
+}
+
+.item.done {
+  background-color: #ebe6e0;
+  color: #808080;
+}
+
+.item .title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: inherit;
+  word-wrap: break-word;
+}
+
+.item .description {
+  font-size: 16px;
+  margin: 0;
+  color: inherit;
+  word-wrap: break-word;
+}
+
+.item .time {
+  font-size: 14px;
+  margin: 0;
+  color: inherit;
+}
+
+.item .tag {
+  width: 20px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  left: 10px;
+  top: 0;
+}
+
+.item .action {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.item .edit {
+  width: 20px;
+  height: 20px;
+}
+.item .checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.item .undeleteable {
+  display: none;
+  transition: all 1s ease-out;
+}
+
+.item .deleteable {
+  background-color: #ff6666;
+  height: 100%;
+  width: 20%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-out;
+}
+
+.item .deleteable * {
+  height: 30px;
+  color: #fff;
+}

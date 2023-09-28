@@ -1,0 +1,26 @@
+.header {
+  width: 100%;
+  background-color: #ebe6e0;
+  color: #734c26;
+}
+
+.header .container {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .app-name {
+  color: #734c26;
+  font-size: 20px;
+}
+
+.header svg {
+  height: 40px;
+}
+
+.header .container button {
+  width: 80px;
+  height: 40px;
+}
