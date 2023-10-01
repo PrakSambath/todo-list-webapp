@@ -11,6 +11,19 @@ body {
   font-family: "Siemreap", sans-serif;
 }
 
+input,
+textarea,
+h1,
+h2,
+h3,
+p,
+span,
+div {
+  font-family: "Roboto", sans-serif;
+  font-family: "Siemreap", sans-serif;
+  line-height: 1;
+}
+
 #main {
   width: 320px;
   height: 568px;
