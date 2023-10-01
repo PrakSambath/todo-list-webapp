@@ -30,7 +30,9 @@ export default function ({ item, onEdit, onDelete, onCheck }) {
         <p className="title">{item.title}</p>
         <p className="description">{item.description}</p>
         <p className="time">
-          {item.time.getHours() + ":" + item.time.getMinutes()}
+          {new Date(item.time).getHours() +
+            ":" +
+            new Date(item.time).getMinutes()}
         </p>
       </div>
       <div className="action">

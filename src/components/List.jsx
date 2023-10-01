@@ -22,6 +22,7 @@ export default function ({ items, onEdit, onDelete, onCheck, filter }) {
           <Item
             key={item.id}
             item={item}
+            time={new Date(item.time)}
             onEdit={onEdit}
             onDelete={onDelete}
             onCheck={onCheck}

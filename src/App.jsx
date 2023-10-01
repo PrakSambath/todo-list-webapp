@@ -17,45 +17,23 @@ function App() {
     { color: "#FFBA53", name: "Person", selected: false },
   ];
 
-  const DEFAULT_ITEMS = [
-    {
-      id: 0,
-      title: "Title 1",
-      description: "Description",
-      time: new Date(2023, 8, 28, 14, 20),
-      category: "Work",
-      status: 0,
-    },
-    {
-      id: 1,
-      title: "Title 2",
-      description: "Description",
-      time: new Date(2023, 8, 28, 14, 20),
-      category: "Finance",
-      status: 0,
-    },
-    {
-      id: 2,
-      title: "Title 3",
-      description: "Description",
-      time: new Date(2023, 8, 28, 14, 20),
-      category: "Buy",
-      status: 0,
-    },
-    {
-      id: 3,
-      title: "Title 4",
-      description: "Description",
-      time: new Date(2023, 8, 28, 14, 20),
-      category: "Person",
-      status: 1,
-    },
-  ];
+  const USER_KEY = "todolist";
+  function getLocalData(userKey) {
+    const data = window.localStorage.getItem(userKey);
+    console.log("get data: ", JSON.parse(data));
+    return data ? JSON.parse(data) : [];
+  }
+  function storeLocalData(userKey, userData) {
+    console.log("store data: ", JSON.stringify(userData));
+    window.localStorage.clear();
+    window.localStorage.setItem(userKey, JSON.stringify(userData));
+  }
 
+  const localData = getLocalData(USER_KEY);
+  const [todoItems, setTodoItems] = useState(localData);
   const [openEditTodo, setOpenEditTodo] = useState(false);
 
   const [filter, setFilter] = useState(2);
-  const [todoItems, setTodoItems] = useState([]);
 
   const DEFAULT_ITEM = {
     id: Math.random().toString(),
@@ -71,21 +49,24 @@ function App() {
   const [lang, setLang] = useState(0);
 
   const onAddTodoItem = (item) => {
-    setTodoItems([{ ...item, id: Math.random().toString() }, ...todoItems]);
+    const newTodoItems = [
+      { ...item, id: Math.random().toString() },
+      ...todoItems,
+    ];
+    storeLocalData(USER_KEY, newTodoItems);
+    setTodoItems(newTodoItems);
     setOpenAddTodo(false);
-    console.log("Add new todo");
-    console.log(item);
     setTodoItem(DEFAULT_ITEM);
+    console.log("Add :", item);
   };
 
   const onSaveChangeTodoItem = (item) => {
     setOpenEditTodo(false);
     const newTodoItems = todoItems.map((e) => (e.id == item.id ? item : e));
+    storeLocalData(USER_KEY, newTodoItems);
     setTodoItems(newTodoItems);
-    console.log("Edit todo");
-    console.log(item);
     setTodoItem(DEFAULT_ITEM);
-    // setTodoItem(DEFAULT_ITEM);
+    console.log("Edit :", item);
   };
 
   const onEditTodoItem = (item) => {
@@ -95,7 +76,9 @@ function App() {
 
   const onDeleteTodoItem = (id) => {
     const newTodoItems = todoItems.filter((item) => item.id != id);
+    storeLocalData(USER_KEY, newTodoItems);
     setTodoItems(newTodoItems);
+    console.log("Delete Id:", id);
   };
 
   const [openAddTodo, setOpenAddTodo] = useState(false);

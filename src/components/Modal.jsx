@@ -71,6 +71,7 @@ export default ({ todoContent, open, onClose, onSave }) => {
           <TimePicker
             className="modal-time"
             onSelected={onSelectedTime}
+            date={new Date(todoContent.time)}
           ></TimePicker>
           <div className="modal-button">
             <button className="btn ok" onClick={() => onSaveHandler()}>
