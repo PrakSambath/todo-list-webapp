@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 
-export default ({ onSelected }) => {
-  const [startDate, setStartDate] = useState(new Date());
+export default ({ onSelected, date }) => {
+  const [startDate, setStartDate] = useState(date);
   const getTime = (date) => {
     return date.getHours() + ":" + date.getMinutes();
   };
