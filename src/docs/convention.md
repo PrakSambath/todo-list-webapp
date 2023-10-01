@@ -70,9 +70,14 @@ anb-sambath-todo-list
 - Create pure functions and avoid side effects. A pure function is a function that always returns the same output given the same input and does not modify any external state or cause any observable changes. A side effect is any change that occurs outside of the function scope. For example, avoid using global variables, mutating parameters, calling APIs, etc.
 - Avoid mutating state when working with arrays or objects. Mutating state means changing the original value of a variable or property. This can cause unexpected behavior and bugs in your app. Instead, use immutable methods or operators that return a new value without modifying the original one. For example, use const newArray = [...oldArray, newItem]; instead of oldArray.push(newItem);.
 
-## 4. Setting Source Code
+## 4 Annotation Rulse
 
-### 4.1. Set Up React Project Using Vite
+- Use `//` for comment
+- Use `/{*.....*}` for comment in jsx
+
+## 5. Setting Source Code
+
+### 5.1. Set Up React Project Using Vite
 
 With NPM:
 
@@ -105,7 +110,7 @@ npm run dev
 Then visit local host http://localhost:3000/  
 For more details visit [link]("https://vitejs.dev/guide/")
 
-### 4.2. Set Up FontAwesome in React
+### 5.2. Set Up FontAwesome in React
 
 1.  Add SVG Core
 
@@ -143,7 +148,7 @@ ReactDOM.render(element, document.body)
 
 For more details visit [link]("https://fontawesome.com/docs/web/use-with/react/")
 
-### 4.3. Install DatePicker
+### 5.3. Install DatePicker
 
 The package can be installed via npm:
 
