@@ -3,7 +3,7 @@ import "./Item.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPencil } from "@fortawesome/free-solid-svg-icons";
 
-export default function ({ item, onEdit, onDelete, onCheck }) {
+export default function ({ item, time, onEdit, onDelete, onCheck }) {
   const tagColors = {
     Work: "#53FF83",
     Finance: "#005CE5",
@@ -30,9 +30,7 @@ export default function ({ item, onEdit, onDelete, onCheck }) {
         <p className="title">{item.title}</p>
         <p className="description">{item.description}</p>
         <p className="time">
-          {new Date(item.time).getHours() +
-            ":" +
-            new Date(item.time).getMinutes()}
+          {time.getHours() + ":" + time.getMinutes()}
         </p>
       </div>
       <div className="action">
