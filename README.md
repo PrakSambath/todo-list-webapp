@@ -49,8 +49,7 @@ To see app work flow please check this [figma flow](https://www.figma.com/proto/
 ## 5. Installation
 
 No need to download.  
-Just
-open this [link](https://scaling-memory-8py4z8z.pages.github.io/) in your browser
+Just open the link in the repository description in browser
 
 ## 6. Usage
 
