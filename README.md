@@ -18,7 +18,7 @@ Hi! This is **PRAK Sambath** from **Above and Beyond School**. I create this Tod
 
 Project Name: **Todo-List**  
 Product Type: **WebApp**  
-Repo Address: **https://github.com/anb-hq/anb-sambath-todo-list**  
+Repo Address: **https://github.com/PrakSambath/todo-list-webapp**  
 Programming Technology: **React**
 
 ## 2. Features
@@ -49,8 +49,7 @@ To see app work flow please check this [figma flow](https://www.figma.com/proto/
 ## 5. Installation
 
 No need to download.  
-Just
-open this [link](https://scaling-memory-8py4z8z.pages.github.io/) in your browser
+Just open the link in the repository description in browser
 
 ## 6. Usage
 
